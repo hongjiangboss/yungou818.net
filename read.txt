@@ -1,0 +1,14 @@
+安装环境: php5.3n+mysql5.x 以上、Curl语言；bc函数库支持  开启openssl 支持pathinfo模式
+Zend版本： zend loader  3.3.0 或以上版本； 最少配置: 500M+50Mmysql； 
+==========
+安装方法： 
+1、解压后将所有文件传到网站根目录； 
+2、在地址栏内输入http://您的网址/install，按提示安装即可；
+3、后台登陆地址：http://您的网址/?/adminwei；
+4、后台设置！
+========== 
+安全设置：
+1、安装完成后强烈建议删除install目录。
+
+
+你的授权码    4ba7cbf7-10a8-11e6-a7a6-fa163e79eee3
