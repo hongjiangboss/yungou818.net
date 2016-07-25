@@ -1,0 +1,88 @@
+{wc:templates "index","header"}
+
+<div class="main-content clearfix">
+
+{wc:templates "member","left"}
+
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_PC_CSS}/layout-setUp.css"/>
+
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_PC_CSS}/layout-invitation.css"/>
+
+
+
+<div class="R-content">
+
+	<div class="subMenu">
+		
+		<a class="current" href="javascript:;" style="margin-left:-20px;margin-top:20px">签到记录:</a>
+
+	</div>
+
+<style>
+.total1{
+	
+}
+</style>
+
+	<div class="total1">
+		<dt>
+		</dt>
+			<dd style="font-size:14px;color:#666666;line-height:25px;">您已连续签到：<b class="orange">{wc:$member['sign_in_time']}</b>天
+			总共签到：<b class="orange">{wc:$member['sign_in_time_all']}</b>天 
+			最后签到日期：<b class="orange">{wc:$member['sign_in_date']}</b></dd>
+			<dd  style="font-size:14px;color:#666666;line-height:25px;">连续签到{wc:$time_day}天可领取神秘大礼一份！(随机1W福分到3W福分）</dd>
+    </div>
+
+	<div class="info" style="margin-bottom:25px;">
+
+		<form class="registerform" method="post" action="{WEB_PATH}/member/home/qiandao">
+
+			<table border="0" cellpadding="0" cellspacing="8">
+
+				<tr>
+
+					<td><em>&nbsp;</em></td>
+
+					<td><input name="submit" type="submit" style="height:32px;font-size:16px;float:left;margin-left: -124px;margin-top: -17px;border-radius:5px;" class="bluebut" value="马上签到"></td>
+
+				</tr>
+
+			</table>
+
+		</form>
+
+	</div>
+
+	<div class="divSQTX">
+
+	<font size="+1" color="#FF0000">
+
+		<span class = "gray02"><font size="+1" color="#666666"><b>签到说明</font></b></span>
+
+	</font><br>
+
+<style>
+p.fp{
+	height: 22px;
+    line-height: 30px;
+    color: #999999;
+    font-size: 14px;
+}	
+</style>
+
+	<p class="fp">1.每天签到时间为{wc:$time_start}到{wc:$time_stop}</p>
+
+	<p class="fp">2.每次签到可获得{wc:$time_score}福分（1000福分=1元）</p>
+
+	<p class="fp">3.同一IP、同一地址、同一联系人、同一台电脑只允许一个账号签到，发现多个账号签到的全部封号。</p>
+
+
+	<p class="fp">更多赚红包活动将陆续上线，免费{wc:fun:_cfg('web_name_two')}将进行到底！！！</p>
+
+	</div>
+
+</div>
+
+</div>
+
+{wc:templates "index","footer"}

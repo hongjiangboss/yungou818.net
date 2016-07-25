@@ -1,0 +1,59 @@
+{wc:templates "index","header"}
+<div class="main-content clearfix">
+{wc:templates "member","left"}
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_STYLE}/css/layout-records.css"/>
+<div class="R-content">
+	<div class="member-t"><h2>推广列表</h2></div>
+	<div id="GoodsList" class="goods_show">
+		<ul class="gtitle">
+			<li class="blue" style="text-align: center;">账号</li>
+			<li class="joinInfo" style="text-align: center;">等级</li>
+			<li class="yg_status" style="text-align: center;">推广数量</li>
+			<li class="blue" style="text-align: center;">上级</li>
+			<li class="blue" style="text-align: center;">营业额</li>
+			<li class="blue" style="text-align: center;">带来佣金</li>
+			<li class="joinInfo">操作</li>
+		</ul>
+		{wc:php:start}
+        	$grade_name_arr = array("1"=>"大区经理","2"=>"区域经理","3"=>"FCP","4"=>"会员");
+        {wc:php:end}
+		{wc:loop $list $rt}
+		<ul class="goods_list">
+
+			{wc:php:start}
+        		if($rt['grade']==2){
+					$yongjin = $rt['yingye']*0.01;
+					$rt['yingye'] = $rt['yingye'] * 0.05;
+				}
+        	{wc:php:end}
+
+			<li class="blue" style="text-align: center;"><a title="" target="_blank" href="{WEB_PATH}/member/home/promlist/{wc:$rt['uid']}">{wc:fun:get_user_name($rt['uid'])}</a></li>
+			<li class="joinInfo" style="text-align: center;">
+				<p class="gray02">{wc:$grade_name_arr[$rt['grade']]}</p>
+			</li>
+			<li class="yg_status" style="text-align: center;"><p><em>{wc:$rt['pronumber']}</em></p></li>
+			<li class="blue" style="text-align: center;">
+				<p class="gray02">{wc:fun:get_user_name($rt['uid'])}</p>
+			</li>
+			<li class="blue" style="text-align: center;">
+				<p class="gray02">{wc:$rt['yingye']}</p>
+			</li>
+			<li class="blue" style="text-align: center;">
+				<p class="gray02">{wc:$yongjin}</p>
+			</li>
+			<li class="joinInfo">{wc:if $rt['grade']!='4'}<a href="{WEB_PATH}/member/home/promlist/{wc:$rt['uid']}" class="blue">查看下级</a>{wc:else}无{wc:if:end}</li>
+		</ul>
+		{wc:loop:end}
+
+        <style>
+			#divPageNav{ padding-top:10px;text-align:right}
+			#divPageNav li a{ padding:5px;}
+		</style>
+		<div id="divPageNav" class="page_nav">
+        	{wc:page:one} <li>共 {wc:$total} 条</li>
+        </div>
+	</div>
+</div>
+
+</div>
+{wc:templates "index","footer"}

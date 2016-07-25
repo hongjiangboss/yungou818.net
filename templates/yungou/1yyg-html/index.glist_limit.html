@@ -1,0 +1,145 @@
+{wc:templates "index","header"}
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_PC_CSS}/Home.css"/>
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_PC_CSS}/Comm1.css"/>
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_PC_CSS}/header.css"/>
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_PC_CSS}/LimitBuy.css"/>
+<style>
+.clear:after, .clrfix:after {
+  content: ' ';
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+</style>
+<script>
+function showh(){
+var height=$("#ddBrandList_brand").innerHeight();
+	if(height==78){
+		$("#ddBrandList_brand").css("height","auto");
+		$(".list_classMore").addClass("MoreClick");
+		$(".list_classMore").html("收起<i></i>");
+	}else{
+		$("#ddBrandList_brand").css("height","78px");
+		$(".list_classMore").removeClass("MoreClick");
+		$(".list_classMore").html("展开<i></i>");
+	};
+}
+$(function(){
+	$(".list_classMore").click(showh);
+});
+</script>
+<div class="wrap" id="loadingPicBlock">
+
+	<div class="g-purchase">
+        <div class="purchase-banner"></div>
+        <div class="purchase-con clrfix">
+    	    <div class="g-purchase-box clrfix">
+               <!--加载-->
+               <div id="divLoading" class="g-loading" style="display: none;"><b></b></div>
+               <!--限购商品数据-->
+               <div id="ulLimitGoodsList" class="m-purchase-list clrfix" style="">
+               		{wc:loop $shoplist $shop}
+               		<div class="productsCon" codeid="1154797" limitbuy="{wc:$shop['pieces_num']}">
+               			<div class="proList ">
+               				<ul>
+               					<li class="list-pic"><a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank" title="{wc:$shop['title']}"><img name="goodsImg" src="{G_UPLOAD_PATH}/{wc:$shop['thumb']}"></a></li>
+               					<li class="list-name"><a href="{WEB_PATH}/goods/{wc:$shop['id']}" target="_blank" title="{wc:$shop['title']}">{wc:$shop['title']}</a></li>
+               					<li class="list-value gray6">价值：￥{wc:$shop['money']}<span><i></i>限购<b>{wc:$shop['pieces_num']}</b>人次</span></li>
+               					<li class="g-progress">
+               						<dl class="m-progress">
+               							<dt><b style="width:{wc:fun:width($shop['canyurenshu'],$shop['zongrenshu'],213)}px;"></b></dt>
+               							<dd>
+               								<span class="orange fl"><em>{wc:$shop['canyurenshu']}</em>已参与</span>
+               								<span class="fl gray6"><em>{wc:$shop['zongrenshu']}</em>总需人次</span>
+               								<span class="blue fr"><em>{wc:$shop['zongrenshu']-$shop['canyurenshu']}</em>剩余</span>
+               							</dd>
+               						</dl>
+               					</li>
+
+               					<li name="buyBox" class="list-btn go_buy" limitbuy="5"><a href="javascript:;" title="立即{wc:fun:_cfg('web_name_two')}" class="u-imm go_Shopping fl">立即{wc:fun:_cfg('web_name_two')}</a><a href="javascript:;" class="u-carts go_cart fr" title="加入到购物车"></a></li>
+               				</ul>
+               			</div>
+               		</div>
+               		<div class="Curbor_id" style="display:none;">{wc:$shop['id']}</div>
+					<div class="Curbor_yunjiage" style="display:none;">{wc:$shop['yunjiage']}</div>
+					<div class="Curbor_shenyu" style="display:none;">{wc:$shop['shenyurenshu']}</div>
+					{wc:loop:end}
+               	</div>
+
+               	{wc:if $total>$num}
+				<div style="clear:both;margin:0px auto;"></div>
+				<div class="pagesx">{wc:page:two}</div>
+				<div style="clear:both;margin:0px auto;"></div>
+				{wc:if:end}
+            </div>
+	    </div>
+
+    </div>
+
+</div>
+<script type="text/javascript">
+var webpath = '{WEB_PATH}';
+$(function(){
+//商品购物车
+	$("#ulLimitGoodsList li a.go_cart").click(function(){
+		var sw = $("#ulLimitGoodsList li a.go_cart").index(this);
+		var src = $("#ulLimitGoodsList .list-pic a img").eq(sw).attr('src');
+		var $shadow = $('<img id="cart_dh" style="display:none; border:1px solid #aaa; z-index:99999;" width="200" height="200" src="'+src+'" />').prependTo("body");
+		var $img = $("#ulLimitGoodsList .list-pic").eq(sw);
+		$shadow.css({
+			'width' : 200,
+			'height': 200,
+			'position' : 'absolute',
+			"left":$img.offset().left+16,
+			"top":$img.offset().top+9,
+			'opacity' : 1
+		}).show();
+
+		//顶部购物车显示数目
+		var $cart = $("#btnMyCart");
+
+		$shadow.animate({
+			width: 1,
+			height: 1,
+			top: $cart.offset().top,
+			left: $cart.offset().left,
+			opacity: 0
+		},500,function(){
+			Cartcookie(sw,false);
+		});
+
+	});
+	$("#ulLimitGoodsList li a.go_Shopping").click(function(){
+		var sw = $("#ulLimitGoodsList li a.go_Shopping").index(this);
+		Cartcookie(sw,true);
+	});
+});
+//存到COOKIE
+function Cartcookie(sw,cook){
+	var shopid = $(".Curbor_id").eq(sw).text(),
+		shenyu = $(".Curbor_yunjiage").eq(sw).text(),
+		money = $(".Curbor_shenyu").eq(sw).text();
+	var Cartlist = $.cookie('Cartlist');
+	if(!Cartlist){
+		var info = {};
+	}else{
+		var info = $.evalJSON(Cartlist);
+	}
+	if(!info[shopid]){
+		var CartTotal=$("#sCartTotal").text();
+			$("#sCartTotal").text(parseInt(CartTotal)+1);
+			$("a#btnMyCart em").text(parseInt(CartTotal)+1);
+	}
+	info[shopid]={};
+	info[shopid]['num']=1;
+	info[shopid]['shenyu']=shenyu;
+	info[shopid]['money']=money;
+	info['MoenyCount']='0.00';
+	$.cookie('Cartlist',$.toJSON(info),{expires:30,path:'/'});
+	if(cook){
+		window.location.href="{WEB_PATH}/member/cart/cartlist";
+	}
+}
+</script>
+{wc:templates "index","footer"}

@@ -1,0 +1,1 @@
+Base.getScript("/templates/yungou/pc/js/BottomFun.js?date=20141118");

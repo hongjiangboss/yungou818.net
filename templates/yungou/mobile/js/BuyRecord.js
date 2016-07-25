@@ -1,0 +1,1 @@
+Base.getScript(Gobal.Skin+"/mobile/js/BuyRecordFun.js?v=130903");

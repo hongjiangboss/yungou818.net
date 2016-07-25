@@ -1,0 +1,51 @@
+			<p class="Pro_Detsingle" style="font-size:14px;">促销价：<b style="color:#9d1875;font-size:18px;">￥{wc:$item['promotion_price']}</b></p>
+			<div id="divNumber" class="Pro_number">
+				数量
+				<a href="javascript:;" class="num_del num_ban" id="shopsub">-</a>
+				<input style="border:1px solid #CFCFCF" type="text" value="1" maxlength="7" onKeyUp="value=value.replace(/\D/g,'')" class="num_dig" id="num_dig"/>
+				<a href="javascript:;" class="num_add" id="shopadd">+</a>
+			</div>
+			<div style="display:none;" id="hqid">{wc:$item['id']}</div>
+			<div id="divBuy" class="Det_button">
+            	{wc:if $item['shenyurenshu'] == '0'}
+                <a href="javascript:;" class="Det_Shopbut_exit" style="width:200px;">已售罄</a>
+                {wc:else}
+				<a href="javascript:;" class="Det_Shopbut" style="width:200px;">立即全额购买</a>
+				 <a href="javascript:;" class="Det_Cartm">加入购物车</a>
+                {wc:if:end}
+               
+			</div>
+			
+<style>
+	.Det_Cartm{
+			width:200px;
+			height:49px;
+			display:block;
+			float:left;
+			line-height:49px;
+			text-align:center;
+			background:#f7941e;
+			border-radius:7px;
+			font-size:24px;
+			font-family:微软雅黑，黑体;
+			color:#fff;
+			border:1px solid #f7941e;	
+}		
+	a.Det_Cartm:hover{
+			background:#f3b367;
+			color:#fff;
+			border:1px solid #f3b367;
+	}
+</style>
+   <script>
+   	 $(function(){
+		 $("#num_dig").mousemove(function(){
+		  $(this).css("border","1px solid #761258");
+		});
+		 $("#num_dig").mouseout(function(){
+		  $(this).css("border","1px solid #CFCFCF");
+		});
+	});
+   	 
+  
+   </script>

@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
+    <title>我的{wc:fun:_cfg('web_name_two')} - {wc:$webname}触屏版</title>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <link href="{G_TEMPLATES_MOBILE_CSS}/comm.css?v=130715" rel="stylesheet" type="text/css" /><link href="{G_TEMPLATES_MOBILE_CSS}/member.css?v=130726" rel="stylesheet" type="text/css" /><script src="{G_TEMPLATES_MOBILE_JS}/jquery190.js" language="javascript" type="text/javascript"></script>
+</head>
+<body>
+
+<script language="javascript" type="text/javascript">
+function showdiv() {
+    document.getElementById("bg").style.display ="block";
+    document.getElementById("show").style.display ="block";
+}
+function hidediv() {
+    document.getElementById("bg").style.display ='none';
+    document.getElementById("show").style.display ='none';
+}
+</script>
+<style type="text/css">
+#bg{ display: none;  position: absolute;  top: 0%;  left: 0%;  width: 100%;  height: 100%;  background-color: #f4f4f4;  z-index:1001;  -moz-opacity: 0.7;  opacity:.70;  filter: alpha(opacity=70);}
+#show{display: none;  position: absolute;  top: 40%;  left: 22%;  width: 53%;  height: 49%;  padding: 8px;  z-index:1002;  overflow: auto;}
+.loading {
+    clear: both;
+    width: 100%;
+    display: block;
+    height: 90px;
+    line-height: 40px;
+    text-align: center;
+    color: #999;
+    font-size: 45px;
+    box-shadow:none;
+    background: none;
+}
+
+.loading b {
+    background: url(data:image/gif;base64,R0lGODlhEAAQAPIAAP///wCA/8Lg/kKg/gCA/2Kw/oLA/pLI/iH/C05FVFNDQVBFMi4wAwEAAAAh/h1CdWlsdCB3aXRoIEdJRiBNb3ZpZSBHZWFyIDQuMAAh/hVNYWRlIGJ5IEFqYXhMb2FkLmluZm8AIfkECQoAAAAsAAAAABAAEAAAAzMIutz+MMpJaxNjCDoIGZwHTphmCUWxMcK6FJnBti5gxMJx0C1bGDndpgc5GAwHSmvnSAAAIfkECQoAAAAsAAAAABAAEAAAAzQIutz+TowhIBuEDLuw5opEcUJRVGAxGSBgTEVbGqh8HLV13+1hGAeAINcY4oZDGbIlJCoSACH5BAkKAAAALAAAAAAQABAAAAM2CLoyIyvKQciQzJRWLwaFYxwO9BlO8UlCYZircBzwCsyzvRzGqCsCWe0X/AGDww8yqWQan78EACH5BAkKAAAALAAAAAAQABAAAAMzCLpiJSvKMoaR7JxWX4WLpgmFIQwEMUSHYRwRqkaCsNEfA2JSXfM9HzA4LBqPyKRyOUwAACH5BAkKAAAALAAAAAAQABAAAAMyCLpyJytK52QU8BjzTIEMJnbDYFxiVJSFhLkeaFlCKc/KQBADHuk8H8MmLBqPyKRSkgAAIfkECQoAAAAsAAAAABAAEAAAAzMIuiDCkDkX43TnvNqeMBnHHOAhLkK2ncpXrKIxDAYLFHNhu7A195UBgTCwCYm7n20pSgAAIfkECQoAAAAsAAAAABAAEAAAAzIIutz+8AkR2ZxVXZoB7tpxcJVgiN1hnN00loVBRsUwFJBgm7YBDQTCQBCbMYDC1s6RAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P4wykmrZULUnCnXHggIwyCOx3EOBDEwqcqwrlAYwmEYB1bapQIgdWIYgp5bEZAAADsAAAAAAAAAAAA=);
+    background-size: 35px auto;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+}
+
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    border: 1px solid #99D3F5;
+    border-radius: 4px;
+    padding: 4px 12px;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+.file:hover {
+    background: #AADFFD;
+    border-color: #78C3F3;
+    color: #004974;
+    text-decoration: none;
+}
+/**
+**
+* 7.7日修改头部部分
+* 
+* */
+#mytreasure{
+float:left;
+}
+#user_bg{
+	float:left;
+	width:100%;
+	height:100%;
+	
+}
+.z-gHimg{
+	float:left;
+	margin-top:-44%;
+	margin-left:25%;
+}
+#my-user-img{
+	float:left;
+	box-shadow:0px 0px 0px 3px #0d1407,
+           0px 0px 0px 6px #0d1407,
+           0px 0px 0px 7px #751157;
+}
+.bangdingshouji{
+	line-height:24px; 
+	margin-right:5px;
+    margin-top:3px;
+    text-align:center;
+    dispay:block;
+}
+.xiugaitouxiang{
+	border:1px solid #761158; widtd:4em;width:80px;height:1.5em; height:24px; line-height:24px;text-align:center;border-radius:10%;
+}
+.shoujihao{
+	line-height:24px; margin-right:5px; margin-top:3px;text-align:center;dispay:block; widtd:4em;width:100%;height:1.5em; height:24px; line-height:24px;text-align:center;
+}
+#my-user-level{
+	float:left;
+	width: 18%;
+    height: 18%;
+	margin-top: 46%;
+    margin-left: -16%;
+}
+.user-level{
+	float:left;
+    margin-top: 53%;
+    margin-left: -10%;
+	font-size:14px;
+}
+#gerenxianqing{
+	float:left;    
+	margin-left: -13%;
+    margin-top: 6%;
+}
+.geren-xinxi li{ float:left;}
+.geren-font16{font-size:16px;line-height:24px;}
+.geren-font24{font-size:24px;line-height:24px;}
+</style>
+
+<div class="h5-yygcms-v11">
+
+<!-- 栏目页面顶部 -->
+
+
+<!-- 内页顶部 -->
+
+    <header class="g-header">
+        <div class="head-l">
+	        <a href="javascript:;" onClick="history.go(-1)" class="z-HReturn"><s></s><b class="gray6 return-font">返回</b></a>
+        </div>
+        <h2>我的{wc:fun:_cfg('web_name_two')}</h2>
+        <div class="head-r">
+	        <div><a href="{WEB_PATH}/mobile/mobile/"><span  class="z-gHome"></span><span class="z-sHome">首页</span></a></div>
+        </div>
+    </header>
+
+    <section class="clearfix g-member">
+    
+    
+        <div id="mytreasure">
+           <img src="{G_UPLOAD_PATH}/banner/mytreasure.png" id="user_bg">
+           <div class="z-gHimg">
+           		<div style="float:left;">
+           			<a href="{WEB_PATH}/mobile/mobile/userindex/{wc:$member['uid']}/"  ><img id="my-user-img" width="80px" height="80px;" style="border-radius:50%; "  src="{G_UPLOAD_PATH}/{wc:fun:get_user_key($member['uid'],'img')}" border=0/></a>
+           			<a href="javascript:;"><img src="{G_UPLOAD_PATH}/banner/level.png" id="my-user-level"><span class="color-write-f user-level" >1</span></a>
+           		</div>
+           		<ul id="gerenxianqing" style="">
+           			<li class="color-write-f" style="text-align:left;width:100%">{wc:fun:get_user_name($member['uid'])}</li>
+           			<li class="shoujihao" style="text-align:left;">
+           				{wc:if $member['mobile']}
+						<span class="color-write-f" style="text-align:left;">({wc:$member['mobile']})</span>	
+						{wc:else}
+						<span><a href="{WEB_PATH}/mobile/home/mobilebind/" class="color-write-f bangdingshouji " style="">绑定手机</a></span>
+				 		{wc:if:end}
+				 		</li>
+           			<li class="color-write-f xiugaitouxiang" onClick="sub_img()" style="text-align:center" >修改头像 <input type="file" name="files[]" id="touimg" style="display:none"></li>
+           		</ul>
+           </div>
+           <ul class="geren-xinxi" style="float:left;width:100%;margin-top:-15%; color:#ffffff">
+           			<li style="width:25%; text-align:center;line-height:24px"><h4 class="geren-font">可用福分</h4><h4>{wc:$member['score']}</h4></li>
+           			<li style="width:25%;text-align:center;line-height:24px"><h4>经验值 </h4><h4>{wc:$member['jingyan']}</h4></li>
+           			<li style="width:25%;text-align:center;line-height:24px"><h4>余额 </h4><h4>￥{wc:$member['money']}</h4></li>
+           			<li style="width:25%;text-align:center;line-height:24px"><h4>充值</h4><h4><a href="{WEB_PATH}/mobile/home/userrecharge/" ><img  src="{G_UPLOAD_PATH}/banner/chongzhi.png" style="margin-top:2px;width:20px;"/></a></h4></li>
+           </ul>
+        </div>
+        
+        <!--  
+	    <div class="clearfix m-round m-name">
+			<div class="fl f-Himg">
+				<a href="{WEB_PATH}/mobile/mobile/userindex/{wc:$member['uid']}/" class="z-Himg">
+			<img id="userimg" src="{G_UPLOAD_PATH}/{wc:fun:get_user_key($member['uid'],'img')}" border=0/></a>
+				<span class="z-class-icon01 gray02"><s></s>{wc:$member['yungoudj']}</span>
+                 <span class="btn fileinput-button">
+                <a href="javascript:;" class="file">修改
+                        <input type="file" name="files[]" id="touimg">
+                    </a>
+                </span>
+			</div>
+			<div class="m-name-info"><p class="u-name">
+				<b class="z-name gray01">{wc:fun:get_user_name($member['uid'])}</b>
+				{wc:if $member['mobile']}
+				<em>({wc:$member['mobile']})</em>
+				{wc:else}
+				<em><a href="{WEB_PATH}/mobile/home/mobilebind/" class="fr z-Recharge-btn" style="line-height:24px; margin-right:5px; margin-top:3px;">绑定手机</a></em>
+				 {wc:if:end}
+				</p>
+				<ul class="clearfix u-mbr-info"><li>可用福分 <span class="orange">{wc:$member['score']}</span></li>
+				<li>经验值 <span class="orange">{wc:$member['jingyan']}</span></li>
+				<li>余额 <span class="orange">￥{wc:$member['money']}</span>
+				<a href="{WEB_PATH}/mobile/home/userrecharge/" class="fr z-Recharge-btn">去充值</a></li>
+				</ul>
+			</div>			
+		</div>
+		-->
+	    <div class="m-round m-member-nav">
+		    <ul id="ulFun">
+		    	<li><a href="{WEB_PATH}/mobile/user/profile"><b class="z-arrow"></b>修改资料</a></li>
+		    	<li><a href="{WEB_PATH}/mobile/home/address/"><b class="z-arrow"></b>收货地址</a></li>
+		    	<li><a href="{WEB_PATH}/mobile/home/password/"><b class="z-arrow"></b>密码修改</a></li>
+		    	<li style="background:url({G_UPLOAD_PATH}/banner/shadow.png) repeat-x;height:4px;max-height:8px;"></li>
+			    <li ><a href="{WEB_PATH}/mobile/home/userbuylist/"><b class="z-arrow"></b>我的{wc:fun:_cfg('web_name_two')}记录</a></li>
+				<li><a href="{WEB_PATH}/mobile/home/jf_userbuylist/"><b class="z-arrow"></b>全额购物</a></li>
+				<li><a href="{WEB_PATH}/mobile/home/userbalance/"><b class="z-arrow"></b>帐户明细</a></li>
+				<li><a href="{WEB_PATH}/mobile/home/orderlist/"><b class="z-arrow"></b>获得的商品</a></li>
+				<li><a href="{WEB_PATH}/mobile/home/singlelist/"><b class="z-arrow"></b>我的晒单</a></li>
+				<li style="background:url({G_UPLOAD_PATH}/banner/shadow.png) repeat-x;height:4px;max-height:8px;"></li>	   
+			    <li><a href="{G_WEB_PATH}/widget/taskhongbao/taskhongbao.html" style=""><b class="z-arrow"></b>任务中心</a></li>
+				<li><a href="{WEB_PATH}/member/home/qiandao/mobile/" style=""><b class="z-arrow"></b>每日签到</a></li>  
+                <li><a href="{WEB_PATH}/mobile/home/invite/"><b class="z-arrow"></b>邀请管理</a></li>
+				<li style="border-bottom:1px solid #EFEFEF"><a href="{WEB_PATH}/mobile/invite/usertransfer/"><b class="z-arrow"></b>福分转帐</a></li>    
+		    </ul>
+	    </div>
+    </section>
+
+{wc:templates "mobile/index","footer"}
+<script language="javascript" type="text/javascript">
+  var Path = new Object();
+  Path.Skin="{G_TEMPLATES_STYLE}";
+  Path.Webpath = "{WEB_PATH}";
+
+var Base={head:document.getElementsByTagName("head")[0]||document.documentElement,Myload:function(B,A){this.done=false;B.onload=B.onreadystatechange=function(){if(!this.done&&(!this.readyState||this.readyState==="loaded"||this.readyState==="complete")){this.done=true;A();B.onload=B.onreadystatechange=null;if(this.head&&B.parentNode){this.head.removeChild(B)}}}},getScript:function(A,C){var B=function(){};if(C!=undefined){B=C}var D=document.createElement("script");D.setAttribute("language","javascript");D.setAttribute("type","text/javascript");D.setAttribute("src",A);this.head.appendChild(D);this.Myload(D,B)},getStyle:function(A,B){var B=function(){};if(callBack!=undefined){B=callBack}var C=document.createElement("link");C.setAttribute("type","text/css");C.setAttribute("rel","stylesheet");C.setAttribute("href",A);this.head.appendChild(C);this.Myload(C,B)}}
+function GetVerNum(){var D=new Date();return D.getFullYear().toString().substring(2,4)+'.'+(D.getMonth()+1)+'.'+D.getDate()+'.'+D.getHours()+'.'+(D.getMinutes()<10?'0':D.getMinutes().toString().substring(0,1))}
+Base.getScript('{G_TEMPLATES_MOBILE_JS}/Bottom.js');
+</script>
+
+</div>
+<div id="bg"></div>
+<div id="show" class="h5-1yyg-v1">
+    <div id="divPayBox" class="paymainbox">
+        <div class="loading"><b></b></div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+function sub_img(){
+	document.getElementById("touimg").click();
+}
+(function($){
+$.fn.extend({
+aiiUpload:function(obj){
+if(typeof obj !="object"){
+alert('参数错误');
+return;
+}
+var imageWidth,imageHeight;
+var base64;
+var file_num=0;
+var fileInput=$(this);
+var fileInputId=fileInput.attr('id');
+createDoc('#'+fileInputId);
+$('#touimg').change(function(){
+if(test(this.value)==false){
+alert('格式错误');
+return;
+}
+var objUrl = getObjectURL(this.files[0]);
+if (objUrl){
+render(objUrl,obj.max_h,obj.max_w,file_num);
+file_num++;
+}
+});
+}
+});
+function createDoc(objID){
+ var element=$(objID);
+ element.append('<canvas id="canvas" style="display:none;"></canvas>');
+}
+function test(value){
+ var regexp=new RegExp("(.JPEG|.jpeg|.JPG|.jpg|.GIF|.gif|.BMP|.bmp|.PNG|.png)$",'g');
+ return regexp.test(value);
+}
+function render(src,MaximgW,MaximgH,idnum){
+var image=new Image();
+image.onload=function(){
+var canvas=document.getElementById('canvas');
+if(image.width>image.height){
+imageWidth=MaximgW;
+imageHeight=MaximgH*(image.height/image.width);
+}else if(image.width<image.height){
+imageHeight=MaximgH;
+imageWidth=MaximgW*(image.width/image.height);
+}else{
+imageWidth=MaximgW;
+imageHeight=MaximgH;
+}
+canvas.width=imageWidth;
+canvas.height=imageHeight;
+var con=canvas.getContext('2d');
+con.clearRect(0,0,canvas.width,canvas.height);
+con.drawImage(image,0,0,imageWidth,imageWidth);
+base64=canvas.toDataURL();
+$("#my-user-img").attr("src",base64);
+showdiv();
+$.post("{WEB_PATH}/mobile/ajax/userimg/",{img:base64},function(data){
+    hidediv();
+    if(data != 1){
+        alert("修改失败！");
+    }else{
+    	alert("修改成功！");
+    }
+});
+}
+image.src=src;
+};
+function getObjectURL(file) {
+ var url = null ;
+ if (window.createObjectURL!=undefined) { // basic
+ url = window.createObjectURL(file) ;
+ } else if (window.URL!=undefined) { // mozilla(firefox)
+ url = window.URL.createObjectURL(file) ;
+ } else if (window.webkitURL!=undefined) { // webkit or chrome
+ url = window.webkitURL.createObjectURL(file) ;
+}
+ return url ;
+}
+
+})(jQuery);
+</script>
+
+<div id="box"></div>
+<script type="text/javascript">
+$('#box').aiiUpload({
+max_h:100,
+max_w:100
+});
+</script>
+
+
+</body>
+</html>

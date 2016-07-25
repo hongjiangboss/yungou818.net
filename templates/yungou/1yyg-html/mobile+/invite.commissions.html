@@ -1,0 +1,223 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
+
+    <title>佣金管理 - {wc:$webname}</title>
+
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+
+    <meta content="telephone=no" name="format-detection" />
+
+    <link href="{G_TEMPLATES_MOBILE_CSS}/comm.css?v=130715" rel="stylesheet" type="text/css" />
+
+    <link href="{G_TEMPLATES_MOBILE_CSS}/member.css?v=130726" rel="stylesheet" type="text/css" />
+
+    <link href="{G_TEMPLATES_MOBILE_CSS}/invite.css?v=130726" rel="stylesheet" type="text/css" />
+
+    <script src="{G_TEMPLATES_MOBILE_JS}/jquery190.js" language="javascript" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div class="h5-yygcms-v11">
+
+    
+
+<!-- 栏目页面顶部 -->
+
+
+
+
+
+<!-- 内页顶部 -->
+
+
+
+    <header class="g-header">
+
+        <div class="head-l">
+
+	        <a href="javascript:;" onClick="history.go(-1)" class="z-HReturn"><s></s><b>返回</b></a>
+
+        </div>
+
+        <h2>佣金管理</h2>
+
+        <div class="head-r">
+
+	        <a href="{WEB_PATH}/mobile/mobile/" class="z-Home"></a>
+
+        </div>
+
+    </header>
+
+
+
+    <section class="clearfix g-member">
+
+        <div class="clearfix m-round m-name">
+
+            <div class="fl f-Himg">
+
+                <a href="{WEB_PATH}/mobile/mobile/userindex/{wc:$member['uid']}/" class="z-Himg">
+
+                    <img src="{G_UPLOAD_PATH}/{wc:fun:get_user_key($member['uid'],'img')}" border=0/></a>
+
+                <span class="z-class-icon01 gray02"><s></s>{wc:$member['yungoudj']}</span>
+
+            </div>
+
+            <div class="m-name-info"><p class="u-name">
+
+                <b class="z-name gray01">{wc:fun:get_user_name($member['uid'])}</b><em>({wc:$member['mobile']})</em></p>
+
+                <ul class="clearfix u-mbr-info"><li>可用福分 <span class="orange">{wc:$member['score']}</span></li>
+
+                    <li>经验值 <span class="orange">{wc:$member['jingyan']}</span></li>
+
+                    <li>余额 <span class="orange">￥{wc:$member['money']}</span>
+
+                        <a href="{WEB_PATH}/mobile/home/userrecharge/" class="fr z-Recharge-btn">去充值</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <div class="R-content">
+
+            <div class="member-t"><h2>佣金明细</h2></div>
+
+            <div class="total">
+
+                <dl>
+
+                    <dd>佣金余额：<b class="orange">{wc:$member['yongjin']}</b>元</dd>
+
+                    <dd><a href="{WEB_PATH}/mobile/invite/cashout/" title="申请提现" class="bluebut">申请提现</a>
+
+                        <a href="{WEB_PATH}/mobile/invite/cashout/" title="充值到账户" class="orangebut">充值到账户</a></dd>
+
+                    <dt class="gray02">佣金余额可实时充值到您的{wc:fun:_cfg('web_name_two')}帐户，满100元时才可申请提现。</dt>
+
+                </dl>
+
+
+
+            </div>
+
+            <!--             <div class="record-tit">
+
+                            <div class="record-tab">
+
+                                <a href="javascript:void();" class="record-cur">全部</a><a href="javascript:void();">今天</a><a href="javascript:void();">本周</a><a href="javascript:void();">本月</a><a href="javascript:void();">最近三个月</a>
+
+                            </div>
+
+
+
+                        </div> -->
+
+            <div id="divCommissionList" class="list-tab commission gray02">
+					<ul class="listTitle"><li class="w20">时间</li><li class="w20"></li><li class="w20">描述</li><li class="w20"></li><li class="w20">佣金(元)</li></ul>
+
+                
+                    </div>
+
+				
+				<div class="goodsList">
+					<div id="divGoodsLoading" class="loading" style="display:none;"><b></b>正在加载...</div>
+					<a id="btnLoadMore" class="loading" href="javascript:;" style="display:none;"><font color="red">点击加载更多</font></a>
+					<a id="btnLoadMore2" class="loading"  style="display:none;">没有数据</a>
+					<a id="btnLoadMore3" class="loading"  style="display:none;">已经到底了</a>
+				</div>
+
+    </section>
+	
+	<input id="urladdress" value="" type="hidden" />
+    <input id="pagenum" value="" type="hidden" />
+    
+
+{wc:templates "mobile/index","footer"}
+
+<script language="javascript" type="text/javascript">
+
+  var Path = new Object();
+
+  Path.Skin="{G_WEB_PATH}/templates/{wc:fun_cfg('template_name')}";
+
+  Path.Webpath = "{WEB_PATH}";
+
+  
+
+var Base={head:document.getElementsByTagName("head")[0]||document.documentElement,Myload:function(B,A){this.done=false;B.onload=B.onreadystatechange=function(){if(!this.done&&(!this.readyState||this.readyState==="loaded"||this.readyState==="complete")){this.done=true;A();B.onload=B.onreadystatechange=null;if(this.head&&B.parentNode){this.head.removeChild(B)}}}},getScript:function(A,C){var B=function(){};if(C!=undefined){B=C}var D=document.createElement("script");D.setAttribute("language","javascript");D.setAttribute("type","text/javascript");D.setAttribute("src",A);this.head.appendChild(D);this.Myload(D,B)},getStyle:function(A,B){var B=function(){};if(callBack!=undefined){B=callBack}var C=document.createElement("link");C.setAttribute("type","text/css");C.setAttribute("rel","stylesheet");C.setAttribute("href",A);this.head.appendChild(C);this.Myload(C,B)}}
+
+function GetVerNum(){var D=new Date();return D.getFullYear().toString().substring(2,4)+'.'+(D.getMonth()+1)+'.'+D.getDate()+'.'+D.getHours()+'.'+(D.getMinutes()<10?'0':D.getMinutes().toString().substring(0,1))}
+
+Base.getScript('{G_TEMPLATES_MOBILE_JS}/Bottom.js');
+
+
+window.onload=function(){
+	glist_json("list/50");
+}
+
+function glist_json(parm){
+	$("#urladdress").val('');
+	$("#pagenum").val('');
+	$.getJSON('{WEB_PATH}/mobile/invite/clistajax/'+parm,function(data){
+		$("#divGoodsLoading").css('display','none');		
+		if(data[0].sum){
+			var fg=parm.split("/");
+			$("#urladdress").val(fg[0]+'/'+fg[1]);
+			$("#pagenum").val(data[0].page);
+			for(var i=0;i<data.length;i++){		
+			
+			var ul='<ul><li class="w140"></li><li class="w150">'+data[i].date+'</li><li class="w280">'+data[i].content+'</li><li class="w90 orange">+'+data[i].money+'</li></ul>';
+			
+				$("#divCommissionList").append(ul);			
+			}
+			if(data[0].page<=data[0].sum){
+				$("#btnLoadMore").css('display','block');
+				$("#btnLoadMore2").css('display','none');
+				$("#btnLoadMore3").css('display','none');
+			}else if(data[0].page>data[0].sum){
+				$("#btnLoadMore").css('display','none');
+				$("#btnLoadMore2").css('display','none');
+				$("#btnLoadMore3").css('display','block');
+			}
+		}else{
+			$("#btnLoadMore").css('display','none');
+			$("#btnLoadMore2").css('display','block');	
+			$("#btnLoadMore3").css('display','none');			
+		}
+	});
+}
+
+$("#btnLoadMore").click(function(){		
+	var url=$("#urladdress").val(),
+		page=$("#pagenum").val();
+	glist_json(url+'/'+page);
+});
+
+</script>
+
+ 
+
+</div>
+
+</body>
+
+</html>
+

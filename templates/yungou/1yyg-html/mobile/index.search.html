@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>搜索商品</title>
+    <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, width=device-width" name="viewport">
+	<meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/query.css">
+</head>
+<body>
+<script type="text/javascript">
+    function go_search(k){
+        var key = k ? k : document.getElementById('keyword').value;
+        if(key.length < 1){
+            document.getElementById('keyword').focus();
+            return
+        }
+        location = "/?/mobile/mobile/search_index/&keyword="+key;
+    }
+</script>
+<div class="g-header">
+	<div id="dvHeader" class="m-simpleHeader">
+	    <a class="m-simpleHeader-back" onclick="history.go(-1);" data-back="true" data-pro="back" href="javascript:void(0);"><i class="ico-back"></i></a>
+	    <h1>搜索商品</h1>
+	</div>
+</div>
+
+<div class="g-body">
+    <div class="g-wrap">
+        <div class="m-query">
+            <div class="w-query">
+                <div class="w-query-form">
+                    <div class="w-input">
+                        <input type="text" id="keyword" maxlength="50" class="w-input-input">
+                        <span class="w-input-placeholder" afmoldstyle="block" style="display: none;">请输入要搜索的商品</span>
+                        <i class="ico ico-query w-input-ico"></i>
+                    </div>
+                    <a href="javascript:void(0)" onclick="go_search()" class="w-button w-query-button">搜索</a>
+                </div>
+            </div>
+            <h2>热门搜索</h2>
+            <ul class="popular-list">
+                <li><a data-keyword="苹果" onclick="go_search('苹果')" href="javascript:void(0)">苹果</a></li>
+                <li><a data-keyword="华为" onclick="go_search('华为')" href="javascript:void(0)">华为</a></li>
+                <li><a data-keyword="小米" onclick="go_search('小米')" href="javascript:void(0)">小米</a></li>
+                <li><a data-keyword="手机" onclick="go_search('手机')" href="javascript:void(0)">手机</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="g-footer">
+    <div class="g-wrap">
+        <p style="margin-bottom: 7px;text-align: left;border-bottom: #DCDCDC 1px dotted;padding: 2px 6px;">特别说明：苹果公司不是818云购赞助商，并且苹果公司也不会以任何形式参与其中！</p>
+        <p class="m-link">
+            <a href="/index.php/mobile/mobile/about/">什么是818云购？</a><var>|</var>
+            <a id="footer_dl" class="footer_dl" style="color:#0079fe" target="_blank" href="/">首页</a>
+        </p>
+        <p class="m-copyright"><span>备案号：粤ICP备16030383号 深圳市捌壹捌网络科技有限公司 版权所有 © 2016</span></p>
+    </div>
+</div>
+
+</body></html>

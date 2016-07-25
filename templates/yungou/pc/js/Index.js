@@ -1,0 +1,1 @@
+Base.getScript("/templates/yungou/pc/js/IndexFun.js?date=2014112601");

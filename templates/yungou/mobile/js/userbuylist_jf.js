@@ -1,0 +1,1 @@
+Base.getScript(Gobal.Skin+"/mobile/js/UserBuyListFun_jf.js");

@@ -1,0 +1,398 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{wc:$webname}</title>
+    <meta content="app-id=518966501" name="apple-itunes-app" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, user-scalable=no, maximum-scale=1.0"/>
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <link href="{G_TEMPLATES_STYLE}/mobile/images/touch-icon.png" rel="apple-touch-icon-precomposed" />
+    <link href="favicon.ico" rel="shortcut icon" />
+    <link href="{G_TEMPLATES_MOBILE_CSS}/comm.css" rel="stylesheet" type="text/css" />
+	<link href="{G_TEMPLATES_MOBILE_CSS}/index.css" rel="stylesheet" type="text/css" />
+	
+		<link rel="stylesheet" href="{G_TEMPLATES_STYLE}/mobile/assets/css/amazeui.min.css?v=2.9">
+    <link rel="stylesheet" href="{G_TEMPLATES_STYLE}/mobile/assets/css/style.css?v=2.3">
+    <link rel="stylesheet" href="{G_TEMPLATES_STYLE}/mobile/assets/css/index.css?v=2.3">
+
+	
+	
+	<script src="{G_TEMPLATES_MOBILE_JS}/jquery190.js" language="javascript" type="text/javascript"></script>
+	<script id="pageJS" data="{G_TEMPLATES_MOBILE_JS}/Index.js" language="javascript" type="text/javascript"></script>
+	<script type="text/javascript" src="{G_TEMPLATES_PC_JS}/jquery.cookie.js"></script>
+		 		
+	
+		<script> 
+		$(function(){    
+    var KEY = "guide";
+    var s = $.cookie( KEY );
+    if( !s ){//首次访问
+        $.cookie( KEY ,true,{expires:1,path:"/"});//设置标记
+        //进行跳转
+        location.href="{G_WEB_PATH}/widget/guide/guide.html";
+
+    }
+});</script>
+</head>
+<body>{wc:templates "mobile/index","header"}
+<div class="h5-yygcms-v1" id="loadingPicBlock">    
+
+
+
+<!-- 内页顶部 -->
+
+     <input name="hidStartAt" type="hidden" id="hidStartAt" value="0" />
+   <section id="sliderBox" class="hotimg">
+      
+    </section>
+   
+    
+      <!-- 小导航 -->
+    
+	<section class="navautos">
+	<div class="textnav2">
+    </div>
+	
+<div class="wrapnavautos">
+				<div id="navautos1">
+					<a href="{WEB_PATH}/mobile/mobile/glist_category/126/10/1/"><img src="{G_TEMPLATES_STYLE}/mobile/images/nava3.png"></a>
+				</div>
+				<div class="textnavword">
+				<p style="text-align:center;font-size: 14px;color:#bbb;">新手</p>
+				
+				</div>
+		</div>
+		<div class="wrapnavautos">
+				<div id="navautos2">
+					<a href="{WEB_PATH}/mobile/user/choujiang/"><img src="{G_TEMPLATES_STYLE}/mobile/images/nava33.png"></a>
+				</div>
+				<div class="textnavword">
+				<p style="text-align:center;font-size: 14px;color:#bbb;">抽奖</p>
+				
+				</div>
+		</div>
+		<div class="wrapnavautos">
+				<div id="navautos3">
+		<a href="{WEB_PATH}/index.php/mobile/shake/"><img src="{G_TEMPLATES_STYLE}/mobile/images/nava22.png"></a>
+				</div>
+				<div class="textnavword">
+				<p style="text-align:center;font-size: 14px;color:#bbb">摇红包</p>
+				
+				</div>
+		</div>
+		<div class="wrapnavautos">
+				<div id="navautos4">
+					<a href="{WEB_PATH}/mobile/shaidan/"><img src="{G_TEMPLATES_STYLE}/mobile/images/nava2.png"></a>
+				</div>
+				<div class="textnavword">
+				<p style="text-align:center;font-size: 14px;color:#bbb">晒单</p>
+				
+				</div>
+		</div>
+		<div class="wrapnavautos">
+				<div id="navautos5">
+				<a href="{WEB_PATH}/mobile/user/login/"><img src="{G_TEMPLATES_STYLE}/mobile/images/nava44.png"></a>
+				</div>
+				<div class="textnavword">
+				<p style="text-align:center;font-size: 14px;color:#bbb">签到</p>
+				
+				</div>
+		</div>
+		
+	</section>
+	<br>
+
+<div class="textnav">  
+</div>
+
+ <div class="am-padding-left-sm  am-padding-bottom-xs bg-white border-bottom">
+        <div onclick="window.location.href='page/user/8.html'" class="font-14 font-color-16 prelative padding-left-25 am-padding-top-xs border-top-2 am-text-truncate"><i
+                class="icon_cont_notice"></i>
+
+            <div class="scrolllayer" id="scrolllayer">
+                <div class="scrollmessage" id="scrollmessage">
+                    <ul>
+						{wc:loop $shopqishu $op}
+                        <li><a href="{WEB_PATH}/mobile/mobile/userindex/{wc:$op['q_uid']}/" class="font-color-16">恭喜<span class="am-font-color-black">“{wc:fun:get_user_name($op['q_uid'])}”</span>获得[{wc:$op['qishu']}]期{wc:$op['title']}</a></li>
+						{wc:loop:end}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- 最新揭晓 -->
+   <section class="g-main">
+	    <div class="m-tt1">
+		    <h2 class="fl"><a href="{WEB_PATH}/mobile/mobile/lottery/">最新揭晓</a></h2>
+		    <div class="fr u-more">
+			    <a href="{WEB_PATH}/mobile/mobile/lottery/" class="u-rs-m1"><b class="z-arrow"></b></a>
+		    </div>
+	    </div>
+	    <article class="h5-yygcms-w310 m-round m-lott-li" id="divLottery">
+		    <ul class="clearfix">
+		    {wc:loop $shopqishu $qishu}
+            {wc:php:start}
+            $qishu['q_user'] = unserialize($qishu['q_user']);
+            {wc:php:end}
+			        <li>
+		                <a href="{WEB_PATH}/mobile/mobile/item/{wc:$qishu['id']}/" class="u-lott-pic">
+		                    <img src="{G_TEMPLATES_STYLE}/mobile/images/loading.gif" src2="{G_UPLOAD_PATH}/{wc:$qishu['thumb']}" border="0" alt="" />
+		                </a>
+		                <span>恭喜<a href="{WEB_PATH}/mobile/mobile/userindex/{wc:$qishu['q_uid']}/" class="blue z-user">{wc:fun:get_user_name($qishu['q_uid'])}</a>获得</span>
+			        </li>
+		        
+			   {wc:loop:end}     
+		        
+		    </ul>
+	    </article>
+    </section>
+	
+    <div class="am-margin-top-xs border-tops">
+        <!--切换tab-->
+        <div data-am-widget="tabs" id="tablist" class=" am-tabs am-tabs-d2 font-14 bg-white am-margin-top-sm  ">
+            <ul class="am-tabs-nav am-cf">
+                <li class="am-active bg-white" data-id="#tab1">
+                    <div class="width-100"><a>人气</a></div>
+                </li>
+                <li class="bg-white" data-id="#tab2">
+                    <div class="width-100"><a><span class="prelative">最新</span></a></div>
+                </li>
+                <li class="bg-white" data-id="#tab3">
+                    <div class="width-100"><a><span class="prelative">进度</span></a></div>
+                </li>
+                <li class="bg-white" data-id="#tab4">
+                    <div class="width-100 "><a><span class="prelative">总需人次</span></a></div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+    <!--商品-->
+    <div class="bg-white">
+        <div class="am-g tab_content" id="tab1">
+		    {wc:loop $shoplistrenqi $renqi}
+			<li id="{wc:$renqi['id']}">
+            <div class="am-u-sm-6 am-u-lg-3 am-u-md-4 border-right border-bottom am-padding-bottom-xs">
+                <div class="">
+                    <a href="{WEB_PATH}/mobile/mobile/item/{wc:$renqi['id']}"><img class="img-140-105 margin-autos" src="{G_UPLOAD_PATH}/{wc:$renqi['thumb']}"></a>
+                </div>
+                <div class="am-text-truncate font-15 font-color-13 am-margin-top-sm min-height-22">{wc:$renqi['title']}
+                </div>
+                <div class="font-14"><span class="font-color-16 ">开奖进度</span><span
+                        class="font-color-12 am-margin-left-sm">{wc:fun:sprintf("%.2f", $renqi['canyurenshu']/$renqi['zongrenshu']*100)}%</span></div>
+                <div class="box am-margin-top-xs">
+                    <div class="box-1">
+                        <div class="am-progress am-progress-xs border-radius-15">
+                            <div class="am-progress-bar am-progress-bar-danger " style="width:{wc:$renqi['canyurenshu']/$renqi['zongrenshu']*100}%;">
+
+							
+							</div>
+                        </div>
+                    </div>
+                    <div class="cont_shop cur am-margin-left-sm" onclick="javascript:addshop({wc:$renqi['id']});"></div>
+                </div>
+            </div> </li>
+            {wc:loop:end}
+        </div>
+		
+		<div class="am-g tab_content" id="tab2" style="display:none;">
+		    {wc:loop $new_shoplist $renqi}
+			<li id="{wc:$renqi['id']}">
+            <div class="am-u-sm-6 am-u-lg-3 am-u-md-4 border-right border-bottom am-padding-bottom-xs">
+                <div class="">
+                    <a href="{WEB_PATH}/mobile/mobile/item/{wc:$renqi['id']}"><img class="img-140-105 margin-autos" src="{G_UPLOAD_PATH}/{wc:$renqi['thumb']}"></a>
+                </div>
+                <div class="am-text-truncate font-15 font-color-13 am-margin-top-sm min-height-22">{wc:$renqi['title']}
+                </div>
+                <div class="font-14"><span class="font-color-16 ">开奖进度</span><span
+                        class="font-color-12 am-margin-left-sm">{wc:fun:sprintf("%.2f", $renqi['canyurenshu']/$renqi['zongrenshu']*100)}%</span></div>
+                <div class="box am-margin-top-xs">
+                    <div class="box-1">
+                        <div class="am-progress am-progress-xs border-radius-15">
+                            <div class="am-progress-bar am-progress-bar-danger " style="width:{wc:$renqi['canyurenshu']/$renqi['zongrenshu']*100}%;"></div>
+                        </div>
+                    </div>
+                    <div class="cont_shop cur am-margin-left-sm" onclick="javascript:addshop({wc:$renqi['id']});"></div>
+                </div>
+            </div> </li>
+            {wc:loop:end}
+        </div>
+		
+		<div class="am-g tab_content" id="tab3" style="display:none;">
+		    {wc:loop $shoplist $renqi}
+			<li id="{wc:$renqi['id']}">
+            <div class="am-u-sm-6 am-u-lg-3 am-u-md-4 border-right border-bottom am-padding-bottom-xs">
+                <div class="">
+                    <a href="{WEB_PATH}/mobile/mobile/item/{wc:$renqi['id']}"><img class="img-140-105 margin-autos" src="{G_UPLOAD_PATH}/{wc:$renqi['thumb']}"></a>
+                </div>
+                <div class="am-text-truncate font-15 font-color-13 am-margin-top-sm min-height-22">{wc:$renqi['title']}
+                </div>
+                <div class="font-14"><span class="font-color-16 ">开奖进度</span><span
+                        class="font-color-12 am-margin-left-sm">{wc:fun:sprintf("%.2f", $renqi['canyurenshu']/$renqi['zongrenshu']*100)}%</span></div>
+                <div class="box am-margin-top-xs">
+                    <div class="box-1">
+                        <div class="am-progress am-progress-xs border-radius-15">
+                            <div class="am-progress-bar am-progress-bar-danger " style="width:{wc:$renqi['canyurenshu']/$renqi['zongrenshu']*100}%;"></div>
+                        </div>
+                    </div>
+                    <div class="cont_shop cur am-margin-left-sm" onclick="javascript:addshop({wc:$renqi['id']});"></div>
+                </div>
+            </div> </li>
+            {wc:loop:end}
+        </div>
+		
+		<div class="am-g tab_content" id="tab4" style="display:none;">
+		    {wc:loop $shoplistall $renqi}
+			<li id="{wc:$renqi['id']}">
+            <div class="am-u-sm-6 am-u-lg-3 am-u-md-4 border-right border-bottom am-padding-bottom-xs">
+                <div class="">
+                    <a href="{WEB_PATH}/mobile/mobile/item/{wc:$renqi['id']}"><img class="img-140-105 margin-autos" src="{G_UPLOAD_PATH}/{wc:$renqi['thumb']}"></a>
+                </div>
+                <div class="am-text-truncate font-15 font-color-13 am-margin-top-sm min-height-22">{wc:$renqi['title']}
+                </div>
+                <div class="font-14"><span class="font-color-16 ">开奖进度</span><span
+                        class="font-color-12 am-margin-left-sm">{wc:fun:sprintf("%.2f", $renqi['canyurenshu']/$renqi['zongrenshu']*100)}%</span></div>
+                <div class="box am-margin-top-xs">
+                    <div class="box-1">
+                        <div class="am-progress am-progress-xs border-radius-15">
+                            <div class="am-progress-bar am-progress-bar-danger " style="width:{wc:$renqi['canyurenshu']/$renqi['zongrenshu']*100}%;"></div>
+                        </div>
+                    </div>
+                    <div class="cont_shop cur am-margin-left-sm" onclick="javascript:addshop({wc:$renqi['id']});"></div>
+                </div>
+            </div> </li>
+            {wc:loop:end}
+        </div>
+    </div>
+
+</section>
+
+{wc:templates "mobile/index","footer"}
+
+	<script src="{G_TEMPLATES_STYLE}/mobile/assets/js/jquery.min.js"></script>
+    <script src="{G_TEMPLATES_STYLE}/mobile/assets/js/amazeui.min.js"></script>
+    <script src="{G_TEMPLATES_STYLE}/mobile/assets/js/common.js"></script> 
+	
+<script>
+    $(".cont_shop").on("click", function () {
+        $("body").tips("添加成功!");
+    });
+
+	$(document).ready(function() {  
+		//On Click Event  
+		$("#tablist ul li").click(function() {  
+			$(".tab_content").hide(); //Hide all tab content  
+			var activeTab = $(this).attr("data-id"); //Find the rel attribute value to identify the active tab + content  
+			$(activeTab).fadeIn(); //Fade in the active content 
+			return false;  
+		});  
+	  
+	});
+</script>
+
+
+
+<script language="javascript" type="text/javascript">
+  var Path = new Object();
+  Path.Skin="{G_TEMPLATES_STYLE}";  
+  Path.Webpath = "{WEB_PATH}";
+  
+    var Base = {
+        head: document.getElementsByTagName("head")[0] || document.documentElement,
+        Myload: function(B, A) {
+            this.done = false;
+            B.onload = B.onreadystatechange = function() {
+                if (!this.done && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {
+                    this.done = true;
+                    A();
+                    B.onload = B.onreadystatechange = null;
+                    if (this.head && B.parentNode) {
+                        this.head.removeChild(B)
+                    }
+                }
+            }
+        },
+        getScript: function(A, C) {
+            var B = function() {};
+            if (C != undefined) {
+                B = C
+            }
+            var D = document.createElement("script");
+            D.setAttribute("language", "javascript");
+            D.setAttribute("type", "text/javascript");
+            D.setAttribute("src", A);
+            this.head.appendChild(D);
+            this.Myload(D, B)
+        },
+        getStyle: function(A, B) {
+            var B = function() {};
+            if (callBack != undefined) {
+                B = callBack
+            }
+            var C = document.createElement("link");
+            C.setAttribute("type", "text/css");
+            C.setAttribute("rel", "stylesheet");
+            C.setAttribute("href", A);
+            this.head.appendChild(C);
+            this.Myload(C, B)
+        }
+    }
+    function GetVerNum() {
+        var D = new Date();
+        return D.getFullYear().toString().substring(2, 4) + '.' + (D.getMonth() + 1) + '.' + D.getDate() + '.' + D.getHours() + '.' + (D.getMinutes() < 10 ? '0': D.getMinutes().toString().substring(0, 1))
+    }
+    Base.getScript('{G_TEMPLATES_MOBILE_JS}/Bottom.js?v=' + GetVerNum());
+	
+	function addshop(codeid){
+		$.getJSON('{WEB_PATH}/mobile/ajax/addShopCart/'+codeid+'/1',function(data){
+			if(data.code==1){
+				addsuccess('添加失败');
+			}else if(data.code==0){
+				addsuccess('添加成功');				
+			}return false;
+		});
+	}
+	
+	function addsuccess(dat){
+		$("#pageDialogBG .Prompt").text("");
+		var w=($(window).width()-255)/2,
+			h=($(window).height()-45)/2;
+		$("#pageDialogBG").css({top:h,left:w,opacity:0.8});
+		$("#pageDialogBG").stop().fadeIn(1000);
+		$("#pageDialogBG .Prompt").append('<s></s>'+dat);
+		$("#pageDialogBG").fadeOut(1000);
+		//购物车数量
+		$.getJSON('{WEB_PATH}/mobile/ajax/cartnum',function(data){
+			
+			$(".car").append('<b class="pig" id="pig">'+data.num+'</b>');
+		});
+	}
+	
+	try{
+        var marqueesHeight = 18; //高度
+        var stopscroll     = false;
+        var scrollElem =   document.getElementById("scrolllayer");
+        with(scrollElem){
+            style.width     = 500;//宽度
+            style.height    = marqueesHeight;
+            style.overflow  = 'hidden';
+            noWrap          = true;
+        }
+        var preTop     = 0;
+        var currentTop = 0;
+        var stoptime   = 0;
+        var leftElem =   document.getElementById("scrollmessage");
+        scrollElem.appendChild(leftElem.cloneNode(true));
+        init_srolltext();
+    }catch(e) {}
+</script>
+
+</div>
+<?php require_once 'cs.php';echo '<img src="'._cnzzTrackPageView(1259282045).'" width="0" height="0"/>';?>
+</body>
+</html>

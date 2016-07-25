@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: http://www.yungou818.com/index.php/adminwei/
+Disallow: http://www.yungou818.com/index.php/member/
+
+Sitemap: http://www.yungou818.com/sitemap.xml

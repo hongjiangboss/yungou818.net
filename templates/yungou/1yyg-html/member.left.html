@@ -1,0 +1,101 @@
+<link rel="stylesheet" type="text/css" href="{G_TEMPLATES_PC_CSS}/layout-Frame.css"/>
+<script type="text/javascript" src="{G_GLOBAL_STYLE}/global/js/jQuery.js"></script>
+<style>
+
+</style>
+<div class="leftm" >
+	<div class="headm" >
+		<a href="{WEB_PATH}/uname/{wc:fun:idjia($member['uid'])}" target="_blank">
+			<img id="imgUserPhoto" src="{G_UPLOAD_PATH}/{wc:fun:get_user_img('160160')}" width="160" height="160" border="0"/>
+		</a>
+	</div>
+	<div class="head-butm">
+		<a href="{WEB_PATH}/member/home/userphoto" class="blue">修改头像</a>
+		<a href="{WEB_PATH}/member/home/modify" class="blue fr">编辑资料</a>
+	</div>
+	
+	<div class="sidebar-navm">
+		<p class="sid-linem"></p>
+		<h3 class="sid-icon01m sidm sidw" op="0" name="sid1" value="0" class-name="0"><a href="{WEB_PATH}/member/home" ><span class="sidm0"></span>我的账户</a></h3>
+		<p class="sid-linem"></p>
+		<h3 class="sid-icon09m sidm sidw" op="0" class-name="1"><a href="{WEB_PATH}/member/home/modify"><span class="sidm1"></span>个人设置</a></h3>
+        <p class="sid-linem"></p>
+        <h3 class="sid-icon05m sidm sidw" op="0" class-name="2"><a href="{WEB_PATH}/member/home/qiandao"><span class="sidm2"></span>每日签到</a></h3>
+		<p class="sid-linem"></p>
+		<h3 class="sid-icon02m sidm sidw " op="0" class-name="3" name="sid2" value="0">
+			<a href="javascript:void();"><span class="sidm3"></span>我的{wc:fun:_cfg('web_name_two')}<s title="收起"></s></a>
+		</h3>
+		<ul style="display:none;">
+			<li class=""><a href="{WEB_PATH}/member/home/userbuylist">{wc:fun:_cfg('web_name_two')}记录</a></li>
+			<li class=""><a href="{WEB_PATH}/member/home/orderlist">获得的商品</a></li>
+			<li class=""><a href="{WEB_PATH}/member/home/jf_orderlist">全额购物</a></li>
+			<li class=""><a href="{WEB_PATH}/member/home/singlelist">晒单</a></li>
+		</ul>
+		<p class="sid-linem"></p>
+		<h3 class="sid-icon03m sidm sidw" op="0" class-name="4" name="sid3" value="0">
+			<a href="javascript:void();"><span class="sidm4"></span>圈子管理 <s title="收起"></s></a>
+		</h3>
+		<ul  style="display:none;">
+			<li class=""><a href="{WEB_PATH}/member/home/joingroup">加入的圈子</a></li>
+			<li class=""><a href="{WEB_PATH}/member/home/topic">圈子话题</a></li>
+		</ul>
+		<p class="sid-linem"></p>
+		<h3 class="sid-icon04m sidm sidw" op="0" class-name="5" name="sid4" value="0">
+			<a href="javascript:void();"><span class="sidm5"></span>邀请管理 <s title="收起"></s></a>
+		</h3>
+		<ul  style="display:none;">
+			<li class=""><a href="{WEB_PATH}/member/home/invitefriends">邀请好友</a></li>
+			<li class=""><a href="{WEB_PATH}/member/home/commissions">佣金明细</a></li>
+			<li class=""><a href="{WEB_PATH}/member/home/cashout">申请提现</a></li>
+			<li class=""><a href="{WEB_PATH}/member/home/record">提现记录</a></li>
+		</ul>
+		<p class="sid-linem"></p>
+		<h3 class="sid-icon05m sidm sidw" op="0" class-name="6" name="sid5" value="0">
+			<a href="javascript:void();"><span class="sidm6"></span>账户管理 <s title="收起"></s></a>
+		</h3>
+		<ul  style="display:none;">
+			<li class=""><a href="{WEB_PATH}/member/home/userbalance">账户明细</a></li>
+			<li class=""><a href="{WEB_PATH}/member/home/userrecharge">账户充值</a></li>
+            <li class=""><a href="{WEB_PATH}/member/home/usertransfer">积分转帐</a></li>
+		</ul>
+		<p class="sid-linem "></p>
+		<h3 class="sid-icon07m sid-hcurm sidm sidw" op="0" class-name="7" haschild="0" url=""><a href="{WEB_PATH}/member/home/userfufen"><span class="sidm7"></span>我的福分</a></h3>
+
+	</div>
+	<div class="sid-servicem">
+	
+		
+	</div>
+</div>
+
+<script type="text/javascript">
+//hover显示颜色
+	$(".sidw").hover(function(){
+		var sidm = ".sidm"+$(this).attr('class-name');
+		$(this).find("span").css({"background-position-x":"-37px"});
+		$(this).find("s").css({"background-position-y":"-290px"});
+	},function(){
+		$(this).find("span").css({"background-position-x":"0px"});
+		$(this).find("s").css({"background-position-y":"-268px"});
+	});
+var _NavState = [true, true, true, true, true];
+$(".sidebar-navm").find("h3").each(function(i,v){
+	var _This = $(this);
+	var _HasClild = _This.attr("hasChild")=="1";
+	var _SObj = _This.find("s");
+	_This.click(function(e){
+		var flag = _This.attr("value");
+		_This.next("ul").toggle(function(){
+			if(flag == 0){
+				_This.attr("value",1);
+				_This.find("s").css({"background-position-y":"-268px","background-position-x":"-36px"});
+			}else{
+			    _This.attr("value",0);
+			    _This.find("s").css({"background-position-x":"-282px","background-position-y":"-268px"});
+			}
+		});
+	});
+});
+</script>
+
+<!--content left end-->

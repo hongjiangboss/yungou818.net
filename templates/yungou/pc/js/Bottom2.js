@@ -1,0 +1,1 @@
+Base.getScript("/templates/yungou/pc/js/BottomFun2.js");
